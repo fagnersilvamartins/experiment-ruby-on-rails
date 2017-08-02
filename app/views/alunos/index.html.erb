@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Alunos</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quant</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alunos.each do |aluno| %>
+      <tr>
+        <td><%= aluno.name %></td>
+        <td><%= aluno.quant %></td>
+        <td>
+          <%= link_to 'Show', aluno, :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'Edit', edit_aluno_path(aluno), :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'Destroy', aluno, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aluno', new_aluno_path , :class => 'btn btn-primary' %>

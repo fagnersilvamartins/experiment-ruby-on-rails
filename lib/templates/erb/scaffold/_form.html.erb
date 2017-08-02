@@ -13,7 +13,7 @@
 
 <% attributes.each do |attribute| -%>
   <div class="field">
-    <% if attribute.type == :integer -%>
+    <% if attribute.type == :integer and singular_table_name == "product" -%>
         <%%= form.label :<%= attribute.column_name %> %>
         <%%= form.text_field :<%= attribute.column_name %>, id: :<%= singular_table_name %>_<%= attribute.column_name %>, :class => 'form-control', :data => {
         'slider-id' => '<%= attribute.column_name %>Slider', 'slider-min' => '0',
