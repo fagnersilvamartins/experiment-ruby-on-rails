@@ -13,18 +13,17 @@
 
 <% attributes.each do |attribute| -%>
   <div class="field">
-<% if attribute.password_digest? -%>
-    <%%= form.label :password %>
-    <%%= form.password_field :password, id: :<%= field_id(:password) %> %>
-  </div>
+    <% if attribute.type == :integer -%>
+        <%%= form.label :<%= attribute.column_name %> %>
+        <%%= form.text_field :<%= attribute.column_name %>, id: :<%= singular_table_name %>_<%= attribute.column_name %>, :class => 'form-control', :data => {
+        'slider-id' => '<%= attribute.column_name %>Slider', 'slider-min' => '0',
+        'slider-max' => '20', 'slider-step' => '1' } %>
+        <%%= javascript_tag '$("#<%= singular_table_name %>_<%= attribute.column_name %>").slider({});' %>
 
-  <div class="field">
-    <%%= form.label :password_confirmation %>
-    <%%= form.password_field :password_confirmation, id: :<%= field_id(:password_confirmation) %> %>
-<% else -%>
-    <%%= form.label :<%= attribute.column_name %> %>
-    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, id: :<%= field_id(attribute.column_name) %> %>
-<% end -%>
+    <% else -%>
+        <%%= form.label :<%= attribute.column_name %> %>
+        <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, :class => 'form-control' %>
+    <% end -%>
   </div>
 
 <% end -%>

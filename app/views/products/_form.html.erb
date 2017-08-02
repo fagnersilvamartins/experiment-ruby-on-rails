@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name %>
-  </div>
+            <%= form.label :name %>
+        <%= form.text_field :name, :class => 'form-control' %>
+      </div>
 
   <div class="field">
-    <%= form.label :quant %>
-
-    <%= form.text_field :quant, id: :product_quant, :class => 'form-control', :data => {
+            <%= form.label :quant %>
+        <%= form.text_field :quant, id: :product_quant, :class => 'form-control', :data => {
         'slider-id' => 'quantSlider', 'slider-min' => '0',
         'slider-max' => '20', 'slider-step' => '1' } %>
-    <%= javascript_tag '$("#product_quant").slider({});' %>
-  </div>
+        <%= javascript_tag '$("#product_quant").slider({});' %>
+
+      </div>
 
   <div class="actions">
     <%= form.submit %>
