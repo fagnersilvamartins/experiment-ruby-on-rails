@@ -2,9 +2,7 @@
 
 <h1>Procucts</h1>
 
-<table data-toggle="table"
-       data-pagination="true"
-       data-search="true">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -17,9 +15,9 @@
       <tr>
         <td><%= procuct.name %></td>
         <td>
-          <%= link_to 'Show', procuct %>
-          <%= link_to 'Edit', edit_procuct_path(procuct) %>
-          <%= link_to 'Destroy', procuct, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Show', procuct, :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'Edit', edit_procuct_path(procuct), :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'Destroy', procuct, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-xs btn-danger' %>
         </td>
       </tr>
     <% end %>
@@ -28,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Procuct', new_procuct_path %>
+<%= link_to 'New Procuct', new_procuct_path , :class => 'btn btn-primary' %>

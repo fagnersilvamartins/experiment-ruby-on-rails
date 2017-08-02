@@ -2,10 +2,7 @@
 
 <h1><%= plural_table_name.titleize %></h1>
 
-<table data-toggle="table"
-       data-pagination="true"
-       <% if plural_table_name.titleize != "Cars" -%>data-search="true"<% end -%>
->
+<table class="table table-striped">
   <thead>
     <tr>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
@@ -22,9 +19,9 @@
         <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
 <% end -%>
         <td>
-          <%%= link_to 'Show', <%= singular_table_name %> %>
-          <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %>
-          <%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%%= link_to 'Show', <%= singular_table_name %>, :class => 'btn btn-default btn-xs' %>
+          <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :class => 'btn btn-default btn-xs' %>
+          <%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-default btn-xs btn-danger' %>
         </td>
       </tr>
     <%% end %>
@@ -33,4 +30,4 @@
 
 <br>
 
-<%%= link_to 'New <%= singular_table_name.titleize %>', new_<%= singular_table_name %>_path %>
+<%%= link_to 'New <%= singular_table_name.titleize %>', new_<%= singular_table_name %>_path , :class => 'btn btn-primary' %>
