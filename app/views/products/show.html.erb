@@ -2,9 +2,13 @@
 
 <dl class="dl-horizontal">
         <dt><strong>Name:</strong></dt>
-      <dd><%= @product.name %></dd>
+      <dd  style="color: blue" >
+        <%= @product.name %>
+      </dd>
         <dt><strong>Quant:</strong></dt>
-      <dd><%= @product.quant %></dd>
+      <dd >
+        <%= @product.quant %>
+      </dd>
   </dl>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

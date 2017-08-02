@@ -2,9 +2,13 @@
 
 <dl class="dl-horizontal">
         <dt><strong>Name:</strong></dt>
-      <dd><%= @cell_phone.name %></dd>
+      <dd  style="color: blue" >
+        <%= @cell_phone.name %>
+      </dd>
         <dt><strong>Quant:</strong></dt>
-      <dd><%= @cell_phone.quant %></dd>
+      <dd >
+        <%= @cell_phone.quant %>
+      </dd>
   </dl>
 
 <%= link_to 'Edit', edit_cell_phone_path(@cell_phone) %> |

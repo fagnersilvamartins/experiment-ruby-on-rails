@@ -3,7 +3,9 @@
 <dl class="dl-horizontal">
   <% attributes.each do |attribute| -%>
       <dt><strong><%= attribute.human_name %>:</strong></dt>
-      <dd><%%= @<%= singular_table_name %>.<%= attribute.name %> %></dd>
+      <dd <% if attribute.name == 'name' -%> style="color: blue" <% end -%>>
+        <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+      </dd>
   <% end -%>
 </dl>
 
