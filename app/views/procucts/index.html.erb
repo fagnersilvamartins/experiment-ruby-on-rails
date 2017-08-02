@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Procucts</h1>
+
+<table data-toggle="table" data-pagination="true" data-search="true">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @procucts.each do |procuct| %>
+      <tr>
+        <td><%= procuct.name %></td>
+        <td>
+          <%= link_to 'Show', procuct %>
+          <%= link_to 'Edit', edit_procuct_path(procuct) %>
+          <%= link_to 'Destroy', procuct, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Procuct', new_procuct_path %>

@@ -1,0 +1,2 @@
+class Procuct < ApplicationRecord
+end
